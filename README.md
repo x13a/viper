@@ -6,7 +6,12 @@ Wipe files with randomized ASCII dicks. It is rust implementation of
 ## Installation
 ```sh
 $ make
-$ make install
+$ sudo make install
+```
+or
+```sh
+$ brew tap x13a/tap
+$ brew install x13a/tap/viper
 ```
 
 ## Usage

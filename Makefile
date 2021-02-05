@@ -2,9 +2,9 @@ NAME        := viper
 
 prefix      ?= /usr/local
 exec_prefix ?= $(prefix)
-bindir      ?= $(exec_prefix)/bin
+sbindir     ?= $(exec_prefix)/sbin
 
-bindestdir  := $(DESTDIR)$(bindir)
+sbindestdir := $(DESTDIR)$(sbindir)
 
 all: build
 
@@ -18,13 +18,13 @@ cargo-uninstall:
 	cargo uninstall --locked $(NAME)
 
 installdirs:
-	install -d $(bindestdir)/
+	install -d $(sbindestdir)/
 
 install: installdirs
-	install ./target/release/$(NAME) $(bindestdir)/
+	install ./target/release/$(NAME) $(sbindestdir)/
 
 uninstall:
-	rm -f $(bindestdir)/$(NAME)
+	rm -f $(sbindestdir)/$(NAME)
 
 clean:
 	cargo clean

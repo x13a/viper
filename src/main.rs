@@ -128,7 +128,7 @@ fn get_opts() -> Result<Opts> {
             }
         }
     }
-    if opts.files.len() == 0 {
+    if opts.files.is_empty() {
         eprintln!("no files");
         exit(EXIT_USAGE);
     }
@@ -279,7 +279,7 @@ fn main() -> Result<()> {
         error_counter: 0,
         zero_block: None,
     };
-    assert_ne!(params.values.len(), 0);
+    assert!(!params.values.is_empty());
     if params.opts.zero {
         params.zero_block = Some(vec![0; params.opts.block_size as usize]);
     }
